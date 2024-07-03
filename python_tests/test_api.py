@@ -55,8 +55,8 @@ def test_add_new_item_api():
     print(add_item_to_cart.status_code)
 
 
-@allure.title("Тест добавляет новый товар в корзину")
-@allure.step('Используя post запрос, кладем книгу в корзину')
+@allure.title("Тест проверяет добавленный товар в корзину")
+@allure.step('Используя get запрос, сверяем айдишники добавляемой и добавленной книг')
 def test_check_item_in_cart():
 
     ProductHeaders = {
