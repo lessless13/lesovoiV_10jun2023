@@ -3,7 +3,7 @@ import time
 import requests
 import json
 
-Authorization = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjAwMDc5MjYsImlhdCI6MTcxOTgzOTkyNiwiaXNzIjoiL2FwaS92MS9hdXRoL2Fub255bW91cyIsInN1YiI6IjAyYzcwYjFmNWE2ZDZjODJjOGFkNWNmYzRmY2Q1N2E4OTAwYThmODNmN2RlZjAxMDk3MTBlZjM4ZTUzNGIwNTMiLCJ0eXBlIjoxMH0.kJIxKIipdZfxqlzEpqqek9J9oBhz592Wz9oNcvWyNgc"
+Authorization = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjAxODYyNjgsImlhdCI6MTcyMDAxODI2OCwiaXNzIjoiL2FwaS92MS9hdXRoL2Fub255bW91cyIsInN1YiI6ImE3YWNkYWNiYTFmMDdkNTFhMzFhZTE3ZmE3NWU2NjhiZDBiODdlZDY4MGRiODkzZDcxMzkwNWE0NmM2ZTg3OGMiLCJ0eXBlIjoxMH0.bQJgvZ2kulPlq1j2AvSmOiGiRyRXChUsmOe5ePLUx3s"
 Coockie = "__ddg1_=sFUSSkQP7gb5aXUzBRE6; refresh-token=; _ym_uid=171954917680888488; _ym_d=1719549176; chg_visitor_id=d06b869a-2809-4bbd-a44c-86700c6d6b95; access-token=Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjAwMDc5MjYsImlhdCI6MTcxOTgzOTkyNiwiaXNzIjoiL2FwaS92MS9hdXRoL2Fub255bW91cyIsInN1YiI6IjAyYzcwYjFmNWE2ZDZjODJjOGFkNWNmYzRmY2Q1N2E4OTAwYThmODNmN2RlZjAxMDk3MTBlZjM4ZTUzNGIwNTMiLCJ0eXBlIjoxMH0.kJIxKIipdZfxqlzEpqqek9J9oBhz592Wz9oNcvWyNgc; _ym_isad=2"
 Id = 3043413
 
@@ -85,6 +85,9 @@ def test_check_item_in_cart():
 
     response = check_item_in_cart.json()
     products = response['products'][0]['goodsId']
+    print('Айди книги на главной странице - ' + str(products))
+    print('Айди книги в корзине - ' + str(Id))
+
     print(products)
 
     assert str(products) == str(Id)
